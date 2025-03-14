@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)file:///C:/Users/ACER/Downloads/hehehehehe.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Do You Like Me?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2rem; /* Smaller font size for mobile */
+      color: #333;
+      margin-bottom: 20px;
+      text-align: center; /* Center text on mobile */
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px; /* Smaller gap for mobile */
+      flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+      justify-content: center; /* Center buttons on mobile */
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem; /* Smaller font size for mobile */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    #yesButton {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #noButton {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #message {
+      font-size: 1.2rem; /* Smaller font size for mobile */
+      color: #333;
+      margin-top: 20px;
+      display: none;
+      text-align: center; /* Center text on mobile */
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 1.5rem; /* Smaller heart size for mobile */
+      color: #ff4d4d;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(100px, -75px); /* Smaller movement for mobile */
+      }
+      50% {
+        transform: translate(-100px, 75px); /* Smaller movement for mobile */
+      }
+      75% {
+        transform: translate(75px, -100px); /* Smaller movement for mobile */
+      }
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+      }
+
+      button {
+        padding: 8px 16px; /* Smaller padding for mobile */
+        font-size: 0.9rem; /* Smaller font size for mobile */
+      }
+
+      .heart {
+        font-size: 1.2rem; /* Smaller heart size for very small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Do you like me?</h1>
+    <div class="buttons">
+      <button id="yesButton">Yes</button>
+      <button id="noButton">No</button>
+    </div>
+    <div id="message">But I don't 😛</div>
+  </div>
+
+  <!-- Heart Balloons -->
+  <div class="heart" style="top: 10%; left: 20%;">❤️</div>
+  <div class="heart" style="top: 30%; left: 70%;">❤️</div>
+  <div class="heart" style="top: 60%; left: 40%;">❤️</div>
+
+  <script>
+    const yesButton = document.getElementById('yesButton');
+    const noButton = document.getElementById('noButton');
+    const message = document.getElementById('message');
+
+    noButton.addEventListener('mouseover', () => {
+      const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+      const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+      noButton.style.position = 'absolute';
+      noButton.style.left = `${x}px`;
+      noButton.style.top = `${y}px`;
+    });
+
+    yesButton.addEventListener('click', () => {
+      message.style.display = 'block';
+    });
+  </script>
+
+</body></html>
